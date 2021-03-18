@@ -1,16 +1,23 @@
+# TODO
+# write tests for the list
+
 def divisible(num, denominator):
 	return ((num % denominator) == 0)
 
-def fizzBuzz(top, trigger1, trigger2):        
+def fizzBuzz(top, trigger1, trigger2):
+    result = []
     for i in range(1,(top+1)):
         fizz = divisible(i, trigger1)
         buzz = divisible(i, trigger2)
         if (fizz == False and buzz == False):
-            print(i)
+            result.append(i)
         elif (fizz == True and buzz == False):
-            print("Fizz")
+            result.append("Fizz")
         elif (fizz == False and buzz == True):
-            print("Buzz")
-        else: print("FizzBuzz")
+            result.append("Buzz")
+        else:
+            result.append("FizzBuzz")
+    return result
+    
 
     
