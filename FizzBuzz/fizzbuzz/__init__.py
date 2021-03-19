@@ -2,11 +2,15 @@
 # write tests for the list
 
 def divisible(num, denominator):
-	return ((num % denominator) == 0)
+    if denominator == 0:
+        return ZeroDivisionError 
+    return ((num % denominator) == 0)
 
-def fizzBuzz(top, trigger1, trigger2):
+def fizzBuzz(bottom, top, trigger1, trigger2):
+    if (trigger1 == 0) or (trigger2 == 0):
+        return ZeroDivisionError
     result = []
-    for i in range(1,(top+1)):
+    for i in range(bottom,(top+1)):
         fizz = divisible(i, trigger1)
         buzz = divisible(i, trigger2)
         if (fizz == False and buzz == False):
